@@ -14,10 +14,10 @@ namespace BookStore.Domain.Concrete
    public class EmailSettings
     {
         public string MailToAddress = "moatad94@gmail.com,ka464@yahoo.com,yu22@gmail.com";
-        public string MailFromAddress = "kpl22@gmail.com";
+        public string MailFromAddress = "ekpl22@gmail.com";
         public bool UseSsl = true;
-        public string Username= "kpl22@gmail.com";
-        public string Password = "987654321";
+        public string Username= "ekpl22@gmail.com";
+        public string Password = "";
         public string ServerName ="smtp.gmail.com";
         public int ServerPort =587;
         public bool WriteAsFile =false;
@@ -47,8 +47,8 @@ namespace BookStore.Domain.Concrete
                     smtpClient.EnableSsl = false;
                 }
                 StringBuilder body = new StringBuilder()
-                .AppendLine("A new Order Has been Submitted")
-                .AppendLine("-------------------------------")
+                .AppendLine("A new Order Has been Submitted !")
+                .AppendLine("-----------------------------")
                 .AppendLine("Books:");
                 foreach (var line in cart.Lines)
                 {
@@ -57,7 +57,7 @@ namespace BookStore.Domain.Concrete
                 }
                 body.AppendFormat("Total order value:{0:c}", cart.ComputeTotalValue())
                 .AppendLine("-------------- ")
-                .AppendLine("Ship To")
+                .AppendLine("Ship To:")
                 .AppendLine("-------------- ")
                 .AppendLine(shippingDetails.Name)
                 .AppendLine(shippingDetails.Line1)
