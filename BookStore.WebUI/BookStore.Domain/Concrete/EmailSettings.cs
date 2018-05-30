@@ -13,10 +13,10 @@ namespace BookStore.Domain.Concrete
 {
    public class EmailSettings
     {
-        public string MailToAddress = "moatad94@gmail.com,ka464@yahoo.com,o@gmail.com";
-        public string MailFromAddress = "kpl@gmail.com";
+        public string MailToAddress = "moatad94@gmail.com,ka464@yahoo.com,yu22@gmail.com";
+        public string MailFromAddress = "kpl22@gmail.com";
         public bool UseSsl = true;
-        public string Username= "kpl@gmail.com";
+        public string Username= "kpl22@gmail.com";
         public string Password = "987654321";
         public string ServerName ="smtp.gmail.com";
         public int ServerPort =587;
