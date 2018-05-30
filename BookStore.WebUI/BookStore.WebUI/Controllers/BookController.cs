@@ -61,19 +61,5 @@ namespace BookStore.WebUI.Controllers
         }
 
 
-
-
-
-
-
-
-
-        //public ActionResult ListAll()
-        //{
-           
-        //    Book book = new Book();
-        //    ViewBag.Specialization = new SelectList(book.Specialization, "Specialization");
-        //    return View();
-        //}
     }
 }
