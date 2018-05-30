@@ -1,0 +1,76 @@
+﻿@model BookStore.WebUI.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "BookStore: Your Cart";
+
+}
+
+<style>
+    #cartTable td{
+        vertical-align:middle;
+
+    }
+</style>
+<h2>Your Cart</h2>
+<table id="cartTable" class="table table-hover">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">SubTotal</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var Line in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-left">@Line.Book.Title</td>
+                <td class="text-left">@Line.Quantity</td>
+                <td class="text-right">@Line.Book.Price.ToString("c")</td>
+                <td class="text-right">@((Line.Quantity * Line.Book.Price).ToString("c"))</td>
+
+                @*Edit Button*@
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                        @Html.Hidden("isbn", Line.Book.ISBN)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-warning btn-sm" type="submit" value="Edit" />
+                }
+                </td>
+
+                @*Delete Button*@
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                    @Html.Hidden("isbn", Line.Book.ISBN)
+                    @Html.HiddenFor(x => x.ReturnUrl)
+                    <input class="btn btn-danger btn-sm" type="submit" value="Delete" />
+                }
+            </td>
+        </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">@Model.Cart.ComputeTotalValue().ToString("c")</td>
+        </tr>
+
+    </tfoot>
+
+</table>
+
+<div class="text-center">
+    <a class="btn btn-info btn-active" href="@Model.ReturnUrl">Continue Shopping</a>
+    @Html.ActionLink("Checkout Now","Checkout",null,
+    new {@class= "btn btn-info btn-active" }
+
+    )
+</div>
+

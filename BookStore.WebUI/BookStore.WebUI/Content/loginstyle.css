@@ -1,0 +1,134 @@
+﻿/*@import "bourbon";
+
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+}*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+.heading_h1{
+	color: #00a4e4;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.heading_h1 .sub_h1{
+	color: #13293d;
+	font-weight: bolder;
+}
+
+.loginContainer{
+	background-color: #13293d;
+	height: 400px;
+	border-radius: 10px;
+	padding-top: 100px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+input[type="text"]{
+    border-radius:30px;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+}
+
+input[type="text"]:focus{
+	border: 2px solid #ffa400;
+}
+
+input[type="password"]{
+    border-radius:30px;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+}
+
+input[type="password"]:focus{
+	border: 2px solid #ffa400;
+}
+
+.login_btn{
+	background-color: #ffa400;
+	border: 1px solid #ffa400;
+	border-radius: 10px;
+	color: #fff;
+	padding: 5px 50px;
+	font-size: 18px;
+	margin-bottom: 5px;
+	transition: .9s all;
+}
+
+.login_btn:hover{
+	background-color: #00a4e4;
+	border:1px solid #00a4e4;
+	border-radius: 50px;
+}
+
+.forgotLink a{
+	text-decoration: none;
+	color: #d2d2d2;
+}
+
+.signupLink{
+	color: #d2d2d2;
+}
+
+.signupLink a{
+	text-decoration: none;
+	color: #00a4e4;
+}

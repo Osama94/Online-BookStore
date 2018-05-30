@@ -1,0 +1,72 @@
+﻿@model BookStore.Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "BookStore:Checkout";
+}
+
+<h2>Check Out Now</h2>
+<p>Please Enter Your Details, And we Will Shipping Your Books As Soon As Possible.</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary();
+
+
+<h3>Ship To</h3>
+<div class="form-group">
+    <label>Name:</label>
+    @Html.TextBoxFor(x=>x.Name,new {@class= "form-control" , @placeholder = "Name" })
+</div>
+
+<h3>Address</h3>
+@*Another way to build form rapidly *@
+@*foreach (var property in ViewData.ModelMetadata.Properties)
+{
+    if (property.PropertyName != "Name" && property.PropertyName != "GiftWrap")
+    {
+        <div class="form-group">
+            <label>@(property.DisplayName??property.PropertyName):</label>
+            @Html.TextBox(property.PropertyName,null, new { @class = "form-control" })
+        </div>
+    }
+
+}*@
+
+
+ 
+    <div class="form-group">
+    <label>Line1:</label>
+    @Html.TextBoxFor(x => x.Line1, new { @class = "form-control", @placeholder = "Address Line 1" })
+</div>
+
+<div class="form-group">
+    <label>Line2:</label>
+    @Html.TextBoxFor(x => x.Line2, new { @class = "form-control", @placeholder = "Address Line 2" })
+</div>
+
+<div class="form-group">
+    <label>City:</label>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control", @placeholder = "City" })
+</div>
+
+<div class="form-group">
+    <label>Mobile:</label>
+    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control", @placeholder = "Mobile" })
+</div>
+
+<div class="form-group">
+    <label>Country:</label>
+    @Html.TextBoxFor(x => x.Country, new { @class = "form-control",@placeholder = "Country" })
+</div>
+    
+
+<h3>Options</h3>
+    <div class="checkbox">
+        <label>@Html.EditorFor(x=>x.GiftWrap) Gift Wrap these book(s)</label>
+        
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+
+    </div>
+
+}

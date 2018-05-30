@@ -1,0 +1,26 @@
+﻿
+#back-top {
+    position: fixed;
+    font-size: 14px;
+    background: #333;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    right: 15px;
+    bottom: 30px;
+    opacity: .4;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+
+}
+
+#back-top:hover {
+    background: #94cf5b;
+    opacity: 1;
+}
+
+
+

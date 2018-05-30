@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    
+     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyle.css" rel="stylesheet" />
+    <link href="~/Content/Footer-with-button-logo.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/GoTopBtn.css" rel="stylesheet" />
+    <link href="~/Content/pageLoad.css" rel="stylesheet" />
+    
+</head>
+<body style="overflow-x: hidden;">
+   
+    
+
+        <div class="navbar navbar-inverse" role="navigation">
+
+            <div class="container-fluid">
+                <div class="navbar-header d-flex col">
+                    <a class="navbar-brand" href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" },
+                Request.Url.Scheme)"><i class="fa fa-cube"></i>Book<b>Store</b></a>
+                </div>
+
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" },
+                Request.Url.Scheme)">Home</a>
+                    </li>
+
+              
+                    @*@Html.DropDownList("Specialization", "Select Specialization");*@
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Categories
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Information Systems</a></li>
+                            <li><a href="#">Computer Science</a></li>
+                            <li><a href="#">Operation Research</a></li>
+                        </ul>
+                </ul>
+
+
+                <form class="navbar-form navbar-left" action="" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchValue" name="searchValue" placeholder="Search For Book">
+                    </div>
+                    <input type="submit" class="btn btn-default" value="Search" />
+
+                </form>
+           
+            </div>
+
+
+
+
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Login
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class=" " href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" },
+                Request.Url.Scheme)"><b>Admin Login</b></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+
+            @Html.Action("Summary", "Cart")
+
+        </div>
+
+
+
+
+
+        <div class="row panel">
+            <div id="specialization" class="col-xs-3">
+                @Html.Action("Menu", "Nav")
+
+
+            </div>
+            <div class="col-xs-8">
+                @RenderBody()
+               
+            </div>
+
+
+        </div>
+      
+
+        <!-- Start footer-->
+        <div class="content">
+        </div>
+        <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" }, Request.Url.Scheme)">
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li><a href="#">Sign up</a></li>
+                            <li><a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="#">Company Information</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help desk</a></li>
+                            <li><a href="#">Forums</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Here we use the Google Embed API to show Google Maps. -->
+                <!-- In order for this to work in your project you will need to generate a unique API key.  -->
+                <iframe id="map-container" frameborder="0" style="border:0;" width="1110" height="340" margin-top 0px;
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOwg_06VPwokRYv534QaPC8g&key=AIzaSyCxs0ZxkvvcshVh6msrYfAzvfvOEVdhu48"></iframe>
+            </div>
+            <div class="social-networks">
+                <a href="https://twitter.com/Osama9494" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/osama.ahmed2014" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/osamaahmed94/" class="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2018 Copyright BookStore- All rights reserved Osama Ahmed </p>
+
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- End footer-->
+
+    <!-- Start Back Top -->
+    <div id="back-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    
+
+    <!-- End Back Top -->
+
+
+
+    <!--Start Page Loading-->
+    <section class="loading-overlay">
+        @*<div class="spinner"></div>*@
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </section>
+
+
+    <!--Start Page Loading-->
+
+
+    <script src="~/Scripts/GoTopBtn.js"></script>
+    <script src="~/Scripts/pageLoad.js"></script>
+</body>
+</html>
+
+
+
+
+

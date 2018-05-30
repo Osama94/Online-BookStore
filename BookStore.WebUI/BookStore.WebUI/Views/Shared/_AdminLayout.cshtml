@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/imgUpload.js"></script>
+    <link href="~/Content/imgUpload.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/GoTopBtn.css" rel="stylesheet" />
+    <link href="~/Content/Footer-with-social-icons.css" rel="stylesheet" />
+</head>
+<body>
+    
+
+
+
+    <div>
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-success "> Book =>  @TempData["message"]</div>
+               
+            }
+       
+       
+
+
+        @RenderBody()
+      
+     
+
+    </div>
+   
+    <div class="content">
+    </div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks">
+            <a href="https://twitter.com/Osama9494" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com/osama.ahmed2014" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://www.linkedin.com/in/osamaahmed94/" class="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 Copyright BookStore- All rights reserved Osama Ahmed </p>
+        </div>
+    </footer>
+     
+   
+    <!-- Start Back Top -->
+    <div id="back-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- End Back Top -->
+    <script src="~/Scripts/GoTopBtn.js"></script>
+ 
+</body>
+</html>

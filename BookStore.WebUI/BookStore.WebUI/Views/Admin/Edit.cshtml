@@ -1,0 +1,83 @@
+﻿@model BookStore.Domain.Entities.Book
+
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    HtmlHelper.ClientValidationEnabled = false;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit: @Model.Title</h3>
+
+    </div>
+
+
+    @using (Html.BeginForm("Edit","Admin",FormMethod.Post,new { encType="multipart/form-data"}))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(b => b.ISBN)
+
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                if (property.PropertyName != "ISBN" &&
+                    property.PropertyName != "ImageData" &&
+                    property.PropertyName != "ImageMimeType")
+                {
+                    <div class="form-group col-xs-8">
+                        <label>@(property.DisplayName ?? property.PropertyName  )</label>
+                        @if (property.PropertyName == "Description")
+                        {
+                            @Html.TextArea(property.PropertyName, null, new { @class = "form-control ", rows = 5 })
+                        }
+                        else
+                        {
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control " })
+
+                        }
+                        @Html.ValidationMessage(property.PropertyName)
+
+
+                    </div>
+                }
+
+            }
+
+            <div class="form-group col-xs-7">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @*<label>Upload Image</label>*@
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-default btn-file">
+                                    Browse… <input type="file" id="imgInp" name="Image">
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        <img id='img-upload' />
+                    </div>
+                </div>
+                @if (Model.ImageData == null)
+                {
+                    <div class="form-control-static ">No Image</div>
+                }
+                else
+                {
+                    <img class="img-thumbnail" width="110" height="110" src="@Url.Action("GetImage","Book",
+                                                                            new { Model.ISBN})" />
+
+                }
+            </div>
+
+
+</div>
+          
+        <div class="panel-footer">
+            <input class="btn btn-success btn-group-sm" type="submit" value="Save" />
+            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-info btn-group-sm" })
+        </div>
+
+    }
+</div>
